@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useCallback, useMemo } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 // Custom debounce hook
 function useDebounce(value: string, delay: number) {
@@ -32,18 +32,19 @@ export default function Search() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [searchCount, setSearchCount] = useState(0);
+  const [calculatedValue, setCalculatedValue] = useState(0);
   
   // Debounce search query to reduce API calls
   const debouncedQuery = useDebounce(query, 300);
-  
-  // Memoize expensive calculation to prevent re-computation on every render
-  const calculatedValue = useMemo(() => {
+
+  // Calculate random value on client-side only to prevent hydration mismatch
+  useEffect(() => {
     let sum = 0;
     for (let i = 0; i < 100000; i++) {
       sum += Math.random();
     }
-    return sum;
-  }, []); // Empty dependency array - calculate only once
+    setCalculatedValue(sum);
+  }, []);
   
   const performSearch = useCallback(async (searchQuery: string) => {
     if (!searchQuery.trim()) {
@@ -133,7 +134,7 @@ export default function Search() {
         </div>
         
         <div id="search-help" className="text-xs text-gray-400 mt-1">
-          Searches: {searchCount} | Calc: {calculatedValue.toFixed(2)}
+          Searches: {searchCount} {calculatedValue > 0 && `| Calc: ${calculatedValue.toFixed(2)}`}
         </div>
       </div>
       
