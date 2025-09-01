@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "title": "Introduction to JavaScript",
+    "category": "programming",
+    "description": "Learn the basics of JavaScript programming"
+  },
+  {
+    "id": 2,
+    "title": "React Fundamentals",
+    "category": "frontend",
+    "description": "Master React components and hooks"
+  },
+  {
+    "id": 3,
+    "title": "Node.js Backend Development",
+    "category": "backend",
+    "description": "Build scalable server applications"
+  },
+  {
+    "id": 4,
+    "title": "Database Design Principles",
+    "category": "database",
+    "description": "Design efficient database schemas"
+  },
+  {
+    "id": 5,
+    "title": "CSS Grid and Flexbox",
+    "category": "css",
+    "description": "Master modern CSS layout techniques"
+  },
+  {
+    "id": 6,
+    "title": "TypeScript Best Practices",
+    "category": "programming",
+    "description": "Write type-safe JavaScript applications"
+  },
+  {
+    "id": 7,
+    "title": "API Design Patterns",
+    "category": "backend",
+    "description": "Design RESTful and GraphQL APIs"
+  },
+  {
+    "id": 8,
+    "title": "Docker Containerization",
+    "category": "devops",
+    "description": "Package applications with Docker"
+  },
+  {
+    "id": 9,
+    "title": "Testing React Applications",
+    "category": "testing",
+    "description": "Unit and integration testing strategies"
+  },
+  {
+    "id": 10,
+    "title": "Performance Optimization",
+    "category": "performance",
+    "description": "Optimize web application performance"
+  },
+  {
+    "id": 11,
+    "title": "GraphQL Fundamentals",
+    "category": "backend",
+    "description": "Query APIs with GraphQL"
+  },
+  {
+    "id": 12,
+    "title": "Vue.js Components",
+    "category": "frontend",
+    "description": "Build reactive components with Vue"
+  },
+  {
+    "id": 13,
+    "title": "MongoDB Aggregations",
+    "category": "database",
+    "description": "Advanced database query patterns"
+  },
+  {
+    "id": 14,
+    "title": "AWS Cloud Services",
+    "category": "cloud",
+    "description": "Deploy applications on AWS"
+  },
+  {
+    "id": 15,
+    "title": "Machine Learning Basics",
+    "category": "ai",
+    "description": "Introduction to ML algorithms"
+  }
+]
