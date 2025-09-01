@@ -1,30 +1,8 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-
-// Custom debounce hook
-function useDebounce(value: string, delay: number) {
-  const [debouncedValue, setDebouncedValue] = useState(value);
-
-  useEffect(() => {
-    const handler = setTimeout(() => {
-      setDebouncedValue(value);
-    }, delay);
-
-    return () => {
-      clearTimeout(handler);
-    };
-  }, [value, delay]);
-
-  return debouncedValue;
-}
-
-interface SearchResult {
-  id: number;
-  title: string;
-  description: string;
-  category: string;
-}
+import { useDebounce } from '../hooks/useDebounce';
+import { SearchResult, ApiSearchResult } from '../types';
 
 export default function Search() {
   const [query, setQuery] = useState('');
@@ -62,14 +40,14 @@ export default function Search() {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       
-      const data = await response.json();
+      const data: ApiSearchResult[] = await response.json();
       
       // Handle API error response
-      if (data.error) {
-        throw new Error(data.error);
+      if ((data as any).error) {
+        throw new Error((data as any).error);
       }
       
-      const formattedResults = data.map((item: any) => ({
+      const formattedResults: SearchResult[] = data.map((item: ApiSearchResult) => ({
         id: item.id,
         title: item.name,
         description: item.desc,
