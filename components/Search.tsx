@@ -112,7 +112,7 @@ export default function Search() {
       <div className="space-y-3">
         {results.map((result) => (
           <div 
-            key={Math.random()}
+            key={result.id}
             className="p-4 bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow"
           >
             <h3 className="text-lg font-semibold text-gray-800 mb-1">
